@@ -20,7 +20,7 @@
 3. 以管理员身份运行bin目录下的start.exe
 4. 根据提示输入对应指令，然后按回车
 
-## 示例截图
+## 样本截图
 ![image](https://user-images.githubusercontent.com/51998152/193248606-44ff6cdd-80b7-4592-85fe-f1dc3ad593cf.png)
 
 ## 初始界面
