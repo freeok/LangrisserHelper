@@ -1,7 +1,7 @@
 # LangrisserRPA
 
 ## 简介
-梦幻模拟战手游——Python自动化脚本
+梦幻模拟战手游——Python自动化脚本（命令行交互方式）
 
 :sparkles: 功能
 1. 支持刷任意副本，并且可以指定次数
@@ -22,5 +22,8 @@
 
 ## 示例截图
 ![image](https://user-images.githubusercontent.com/51998152/193248606-44ff6cdd-80b7-4592-85fe-f1dc3ad593cf.png)
+
+## 初始界面
+![image](https://user-images.githubusercontent.com/51998152/193400016-bf158a83-ffe1-4978-aa63-0e00128dbc3e.png)
 
 <strong style='color:#f56c6c'>不要修改目录名、截图文件名！会导致脚本执行出错</strong>
