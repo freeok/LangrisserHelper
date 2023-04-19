@@ -33,8 +33,6 @@
 
 安装依赖包，在终端中输入
 ```commandline
-pip install pyperclip
-pip install xlrd
 pip install pyautogui
 pip install opencv-python -i https://pypi.tuna.tsinghua.edu.cn/simple
 pip install pillow
