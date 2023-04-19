@@ -27,3 +27,23 @@
 ![image](https://user-images.githubusercontent.com/51998152/193400016-bf158a83-ffe1-4978-aa63-0e00128dbc3e.png)
 
 <strong style='color:#f56c6c'>不要修改目录名、截图文件名！会导致脚本执行出错</strong>
+
+## 开发者安装教程
+安装配置python3.4以上版本，个人用的3.11
+
+安装依赖包，在终端中输入
+```commandline
+pip install pyperclip
+pip install xlrd
+pip install pyautogui
+pip install opencv-python -i https://pypi.tuna.tsinghua.edu.cn/simple
+pip install pillow
+pip install pyinstaller
+```
+pip安装的包放在哪里？
+
+使用 pip list 查看已安装的包名
+
+然后用 pip show 包名，就可以看到安装到哪了
+
+通常安装在python安装目录下的 lib/site-packages
