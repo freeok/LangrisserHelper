@@ -12,13 +12,14 @@
 
 <strong>目前游戏新增了自动吃汉堡功能，因此只要设置一次后续就不需要再考虑体力补充的问题（<del>前提是汉堡得管够</del>）</strong>
 
-:computer: 原理：图像识别定位、编程控制鼠标和键盘。使用pyautogui库实现
+:computer: 原理：图像识别定位、编程控制鼠标和键盘。pyautogui库实现
 
 ## 使用说明
 1. 下载发行版：https://github.com/pcdd-group/LangrisserRPA/releases/download/v0.1-beta.1/LangrisserRPA.tar.gz
 2. 初次使用需要进入res/img目录，将示例图片替换为自己的（重新手动截图，尽量截成和示例图片一样的）
-3. 以管理员身份运行bin目录下的start.exe
-4. 根据提示输入对应指令，然后按回车
+3. 之后就不要更改游戏窗口大小了否则不被程序识别，要重新截图
+4. 以管理员身份运行bin目录下的start.exe
+5. 根据提示输入对应指令，然后按回车
 
 ## 样本截图
 ![image](https://user-images.githubusercontent.com/51998152/193248606-44ff6cdd-80b7-4592-85fe-f1dc3ad593cf.png)
