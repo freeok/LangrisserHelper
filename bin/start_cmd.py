@@ -1,15 +1,65 @@
 import datetime
 import os
+import sys
 import time
-
 import pyautogui
 
-img_path = '../res/img/'
+img_dungeon_path = '../res/img/dungeon/'
+img_daily_path = '../res/img/daily/'
+# 屏幕尺寸
+width, height = pyautogui.size()
 
 
-# 完成每日任务
-def daily():
+# 连续滚动
+def scroll(val, n):
+    pyautogui.moveTo(width / 2, height / 2, duration=0.3)
+    time.sleep(1)
+    for i in range(n):
+        pyautogui.scroll(val)
+
+
+# TODO 秘境扫荡
+def sweep():
+    # 秘境
+    click_gui2(img_daily_path + 'mijing1.png', img_daily_path + 'mijing2.png')
+
+    # 兄贵健身房
+    click_gui(img_daily_path + 'xionggui.png')
+    time.sleep(2)
+    click_gui(img_daily_path + 'back.png')
+    # TODO 扫荡按钮
+
+    # 女神的试炼
+    click_gui(img_daily_path + 'nvshen.png')
+    time.sleep(2)
+    click_gui(img_daily_path + 'back.png')
+    # 移动光标，向下滚动10次
+    scroll(-1, 10)
+
+    # 羁绊之地
+    click_gui(img_daily_path + 'jiban.png')
+    time.sleep(2)
+    click_gui(img_daily_path + 'back.png')
+    scroll(-1, 25)
+
+    # 永恒的神殿
+    click_gui(img_daily_path + 'shendian.png')
+    time.sleep(2)
+    click_gui(img_daily_path + 'back.png')
+
+    # 返回主界面
+    click_gui(img_daily_path + 'back.png')
+
+
+# TODO 每日任务
+def task():
     print('该功能待开发🔧，敬请期待！')
+
+
+# 日常操作：扫荡秘境 + 每日任务 + 命运之扉 + 友情点赠送/领取 + 邮件一键领取
+def daily():
+    sweep()
+    task()
 
 
 # 刷副本
@@ -28,18 +78,18 @@ def dungeon(tag, num):
             i = num - n + 1 if flag else always_count  # 第几次执行
             print('【%s】第%s次执行' % (tag, i))
             if auto_once:
-                click_gui(img_path + 'auto.png')  # 只开一次自动
+                click_gui(img_dungeon_path + 'auto.png')  # 只开一次自动
                 auto_once = False
-            click_gui(img_path + 'end1.png')  # 战斗结算界面点击
-            click_gui(img_path + 'end2.png')  # 开宝箱动画点击
+            click_gui(img_dungeon_path + 'end1.png')  # 战斗结算界面点击
+            click_gui(img_dungeon_path + 'end2.png')  # 开宝箱动画点击
             screenshot(tag, i)
-            click_gui(img_path + 'restart.png')  # 点击左下方“再次战斗”按钮
+            click_gui(img_dungeon_path + 'restart.png')  # 点击左下方“再次战斗”按钮
             if flag:
                 if i != num:  # 最后一次不执行
-                    click_gui(img_path + 'attack.png')  # 点击“出击”按钮
+                    click_gui(img_dungeon_path + 'attack.png')  # 点击“出击”按钮
                 n -= 1
             else:
-                click_gui(img_path + 'attack.png')  # 点击“出击”按钮
+                click_gui(img_dungeon_path + 'attack.png')  # 点击“出击”按钮
                 always_count += 1
         print('【%s】连刷%s次完毕！' % (tag, num))
     else:
@@ -50,14 +100,33 @@ def dungeon(tag, num):
 def click_gui(img):
     while True:
         # 获取图片定位，当grayscale=True时会使图像和屏幕截图中的颜色去饱和，解决由于显示器饱和度不同从而引起的颜色细微差异因而导致的图像定位失败问题。
-        location = pyautogui.locateCenterOnScreen(img, grayscale=True)
-        # location = pyautogui.locateCenterOnScreen(img, confidence=0.9, grayscale=True)
+        location = pyautogui.locateCenterOnScreen(img, confidence=0.9, grayscale=True)
         if location is not None:
             # 单击坐标位置，duration表示移动光标的耗时
-            pyautogui.click(location.x, location.y, duration=0.2)
+            pyautogui.click(location.x, location.y, duration=0.3)
             return True
         print('未匹配到样本图片%s，1秒后重试' % img)
         time.sleep(1)
+
+
+# click_gui 重载
+def click_gui2(img1, img2):
+    while True:
+        # 获取图片定位，当grayscale=True时会使图像和屏幕截图中的颜色去饱和，解决由于显示器饱和度不同从而引起的颜色细微差异因而导致的图像定位失败问题。
+        location = pyautogui.locateCenterOnScreen(img1, confidence=0.9, grayscale=True)
+        if location is not None:
+            # 单击坐标位置，duration表示移动光标的耗时（秒）
+            pyautogui.click(location.x, location.y, duration=0.2)
+            return True
+        else:
+            print('开始匹配图片2')
+            location = pyautogui.locateCenterOnScreen(img2, confidence=0.9, grayscale=True)
+            if location is not None:
+                pyautogui.click(location.x, location.y, duration=0.2)
+                return True
+            else:
+                print('未匹配到样本图片%s，1秒后重试' % img2)
+                time.sleep(1)
 
 
 def screenshot(tag, num):
@@ -84,12 +153,12 @@ if __name__ == '__main__':
 
     while True:
         print('\n请选择功能:')
-        print('1.完成每日任务(附魔任务请自行完成)')
+        print('1.完成每日任务(附魔任务需自行完成)')
         print('2.刷秘境副本')
         print('3.使用须知')
         code = input('请输入：')
         if code == '1':
-            daily()
+            task()
             continue
         if code == '2':
             while True:
