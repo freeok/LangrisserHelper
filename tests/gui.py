@@ -12,5 +12,5 @@ width = rect[2] - rect[0]
 height = rect[3] - rect[1]
 print('梦战窗体宽、高：%s x %s' % (width, height))
 
-# print(list(pyautogui.locateAllOnScreen('../resources/img/t.png')))
-# print(pyautogui.locateOnScreen('../resources/img/t.png'))
+# print(list(pyautogui.locateAllOnScreen('../assets/img/t.png')))
+# print(pyautogui.locateOnScreen('../assets/img/t.png'))
