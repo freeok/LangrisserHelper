@@ -1,9 +1,9 @@
 mkdir -p tmp
-cp start.py ../res/logo.ico tmp
+cp start_cmd.py ../res/logo.ico tmp
 cd tmp || exit
 
 # 使用Pyinstaller将.py打包成.exe，并且指定图标
-pyinstaller -F --icon=logo.ico start.py
+pyinstaller -F --icon=logo.ico start_cmd.py
 
 # 进入根目录
 cd ../..
@@ -13,7 +13,7 @@ rm -rf dist
 mkdir -p dist/LangrisserRPA/bin dist/LangrisserRPA/res
 
 # 入口文件拷贝
-cp bin/tmp/dist/start.exe dist/LangrisserRPA/bin
+cp bin/tmp/dist/start_cmd.exe dist/LangrisserRPA/bin
 # 示例图片拷贝
 cp -r res/img dist/LangrisserRPA/res
 

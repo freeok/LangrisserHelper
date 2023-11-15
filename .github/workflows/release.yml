@@ -28,7 +28,7 @@ jobs:
           pip install pillow
           pip install pyinstaller
       # Build
-      - run: cd bin && sh deploy.sh
+      - run: cd bin && sh cmd_deploy.sh
       # Release
       - name: Create Release
         uses: ncipollo/release-action@v1.10.0
