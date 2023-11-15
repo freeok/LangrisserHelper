@@ -1,5 +1,3 @@
-import time
-
 import pyautogui
 import win32gui
 

@@ -1,11 +1,10 @@
 import time
 
-from PyQt6.QtCore import QThread
-
 from bin.pyautogui_utils import PyautoguiUtils
 
 img_dungeon_path = '../res/img/dungeon/'
 img_daily_path = '../res/img/daily/'
+
 
 # 秘境
 class SecretRealm:

@@ -52,14 +52,9 @@ def sweep():
 
 
 # TODO 每日任务
-def task():
-    sweep()
 
 
-# 日常操作：扫荡秘境 + 每日任务 + 命运之扉 + 友情点赠送/领取 + 邮件一键领取
-def daily():
-    sweep()
-    task()
+# TODO 日常操作：扫荡秘境 + 每日任务 + 命运之扉 + 友情点赠送/领取 + 邮件一键领取
 
 
 # 刷副本
@@ -154,12 +149,12 @@ if __name__ == '__main__':
 
     while True:
         print('\n请选择功能:')
-        print('1.完成每日任务(附魔任务需自行完成)')
+        print('1.秘境扫荡')
         print('2.刷秘境副本')
         print('3.使用须知')
         code = input('请输入：')
         if code == '1':
-            task()
+            sweep()
             continue
         if code == '2':
             while True:
