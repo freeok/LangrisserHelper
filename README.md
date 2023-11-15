@@ -52,9 +52,9 @@ pip config set install.trusted-host mirrors.aliyun.com
 ```commandline
 pip install pyautogui
 pip install opencv-python
-pip install pyinstaller
 pip install pyqt6
 pip install pyqt6-tools
+pip install pyinstaller
 ```
 
 pip安装的包放在哪里？
