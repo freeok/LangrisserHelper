@@ -21,29 +21,29 @@ def scroll(val, n):
 # TODO 秘境扫荡
 def sweep():
     # 秘境
-    click_gui2(img_daily_path + 'mijing1.png', img_daily_path + 'mijing2.png')
+    click_gui2(img_daily_path + 'secret_realm1.png', img_daily_path + 'secret_realm2.png')
 
     # 兄贵健身房
-    click_gui(img_daily_path + 'xionggui.png')
+    click_gui(img_daily_path + 'dear_brother.png')
     time.sleep(2)
     click_gui(img_daily_path + 'back.png')
     # TODO 扫荡按钮
 
     # 女神的试炼
-    click_gui(img_daily_path + 'nvshen.png')
+    click_gui(img_daily_path + 'goddess.png')
     time.sleep(2)
     click_gui(img_daily_path + 'back.png')
     # 移动光标，向下滚动10次
     scroll(-1, 10)
 
     # 羁绊之地
-    click_gui(img_daily_path + 'jiban.png')
+    click_gui(img_daily_path + 'bond.png')
     time.sleep(2)
     click_gui(img_daily_path + 'back.png')
     scroll(-1, 25)
 
     # 永恒的神殿
-    click_gui(img_daily_path + 'shendian.png')
+    click_gui(img_daily_path + 'temple.png')
     time.sleep(2)
     click_gui(img_daily_path + 'back.png')
 
