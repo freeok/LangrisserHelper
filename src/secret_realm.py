@@ -1,9 +1,9 @@
 import time
 
-from bin.pyautogui_utils import PyautoguiUtils
+from src.pyautogui_utils import PyautoguiUtils
 
-img_dungeon_path = '../res/img/dungeon/'
-img_daily_path = '../res/img/daily/'
+img_dungeon_path = '../resources/img/dungeon/'
+img_daily_path = '../resources/img/daily/'
 
 
 # 秘境
