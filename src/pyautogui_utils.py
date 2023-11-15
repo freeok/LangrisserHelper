@@ -21,19 +21,22 @@ class PyautoguiUtils:
 
     @staticmethod
     def click_gui2(img1, img2):
+        retry_num = 0
         while True:
             try:
                 location = pyautogui.locateCenterOnScreen(img1)
                 pyautogui.click(location.x, location.y, duration=0.2)
                 return True
             except pyautogui.ImageNotFoundException:
-                print('图片1未找到，开始匹配图片2')
                 try:
+                    print('样本图片 1 未匹配 {}，1 秒后尝试匹配图片 2（第 {} 次重试）'.format(img1, retry_num))
+                    time.sleep(1)
                     location = pyautogui.locateCenterOnScreen(img2, confidence=0.8, grayscale=True)
                     pyautogui.click(location.x, location.y, duration=0.2)
                     return True
                 except pyautogui.ImageNotFoundException:
-                    print('未匹配到样本图片 %s，1 秒后重试' % img2)
+                    print('样本图片 2 未匹配 {}，1 秒后尝试匹配图片 1（第 {} 次重试）'.format(img2, retry_num))
+                    retry_num += 1
                     time.sleep(1)
 
     @staticmethod
