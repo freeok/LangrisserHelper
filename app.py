@@ -2,8 +2,8 @@ import sys
 
 from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox
 
-from bin.secret_realm import SecretRealm
-from ui.pyqt import Ui_MainWindow
+from src.secret_realm import SecretRealm
+from src.ui.pyqt import Ui_MainWindow
 
 
 class MyMainForm(QMainWindow, Ui_MainWindow):

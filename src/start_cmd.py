@@ -4,8 +4,8 @@ import time
 
 import pyautogui
 
-img_dungeon_path = '../res/img/dungeon/'
-img_daily_path = '../res/img/daily/'
+img_dungeon_path = '../resources/img/dungeon/'
+img_daily_path = '../resources/img/daily/'
 # 屏幕尺寸
 width, height = pyautogui.size()
 
