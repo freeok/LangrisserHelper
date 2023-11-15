@@ -47,7 +47,7 @@ class PyautoguiUtils:
 
     @staticmethod
     def click_godless_ball():
-        img_daily_path = '../resources/img/daily/'
+        img_daily_path = 'assets/img/daily/'
         region_list = list(
             pyautogui.locateAllOnScreen(img_daily_path + 'bless_ball.png', confidence=0.7, grayscale=True))
         if len(region_list) != 0:
