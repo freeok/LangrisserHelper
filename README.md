@@ -20,7 +20,7 @@
 
 ## 使用说明（cmd版，gui开发中）
 
-1. 下载发行版：https://github.com/pcdd-group/LangrisserRPA/releases/download/v0.1-beta.1/LangrisserRPA.tar.gz
+1. 下载发行版：https://github.com/pcdd-group/LangrisserRPA/releases/download/v0.2.0-beta.1/LangrisserRPA.tar.gz
 2. 初次使用需要进入res/img目录，将示例图片替换为自己的（重新手动截图，尽量截成和示例图片一样的）
 3. 之后就不要更改游戏窗口大小了否则不被程序识别，要重新截图
 4. 以管理员身份运行bin目录下的start.exe
@@ -65,4 +65,4 @@ pip安装的包放在哪里？
 
 通常安装在python安装目录下的 lib/site-packages
 
-运行 .sh 文件要配置 bash 解释器（git 目录下有）
+**运行 .sh 文件要配置 bash 解释器（git 目录下有）**
