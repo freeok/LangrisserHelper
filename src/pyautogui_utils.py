@@ -33,7 +33,7 @@ class PyautoguiUtils:
                     pyautogui.click(location.x, location.y, duration=0.2)
                     return True
                 except pyautogui.ImageNotFoundException:
-                    print('未匹配到样本图片%s，1秒后重试' % img2)
+                    print('未匹配到样本图片 %s，1 秒后重试' % img2)
                     time.sleep(1)
 
     @staticmethod
