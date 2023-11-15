@@ -1,7 +1,7 @@
 import datetime
 import os
-import sys
 import time
+
 import pyautogui
 
 img_dungeon_path = '../res/img/dungeon/'
@@ -53,7 +53,7 @@ def sweep():
 
 # TODO 每日任务
 def task():
-    print('该功能待开发🔧，敬请期待！')
+    sweep()
 
 
 # 日常操作：扫荡秘境 + 每日任务 + 命运之扉 + 友情点赠送/领取 + 邮件一键领取
@@ -99,32 +99,33 @@ def dungeon(tag, num):
 # 鼠标左键单击指定图片所在位置
 def click_gui(img):
     while True:
-        # 获取图片定位，当grayscale=True时会使图像和屏幕截图中的颜色去饱和，解决由于显示器饱和度不同从而引起的颜色细微差异因而导致的图像定位失败问题。
-        location = pyautogui.locateCenterOnScreen(img, confidence=0.9, grayscale=True)
-        if location is not None:
+        try:
+            # 获取图片定位，当grayscale=True时会使图像和屏幕截图中的颜色去饱和，解决由于显示器饱和度不同从而引起的颜色细微差异因而导致的图像定位失败问题。
+            location = pyautogui.locateCenterOnScreen(img, confidence=0.9, grayscale=True)
             # 单击坐标位置，duration表示移动光标的耗时
             pyautogui.click(location.x, location.y, duration=0.3)
             return True
-        print('未匹配到样本图片%s，1秒后重试' % img)
-        time.sleep(1)
+        except pyautogui.ImageNotFoundException:
+            print('未匹配到样本图片%s，1秒后重试' % img)
+            time.sleep(1)
 
 
 # click_gui 重载
 def click_gui2(img1, img2):
     while True:
-        # 获取图片定位，当grayscale=True时会使图像和屏幕截图中的颜色去饱和，解决由于显示器饱和度不同从而引起的颜色细微差异因而导致的图像定位失败问题。
-        location = pyautogui.locateCenterOnScreen(img1, confidence=0.9, grayscale=True)
-        if location is not None:
+        try:
+            # 获取图片定位，当grayscale=True时会使图像和屏幕截图中的颜色去饱和，解决由于显示器饱和度不同从而引起的颜色细微差异因而导致的图像定位失败问题。
+            location = pyautogui.locateCenterOnScreen(img1, confidence=0.9, grayscale=True)
             # 单击坐标位置，duration表示移动光标的耗时（秒）
             pyautogui.click(location.x, location.y, duration=0.2)
             return True
-        else:
+        except pyautogui.ImageNotFoundException:
             print('开始匹配图片2')
-            location = pyautogui.locateCenterOnScreen(img2, confidence=0.9, grayscale=True)
-            if location is not None:
+            try:
+                location = pyautogui.locateCenterOnScreen(img2, confidence=0.9, grayscale=True)
                 pyautogui.click(location.x, location.y, duration=0.2)
                 return True
-            else:
+            except pyautogui.ImageNotFoundException:
                 print('未匹配到样本图片%s，1秒后重试' % img2)
                 time.sleep(1)
 
