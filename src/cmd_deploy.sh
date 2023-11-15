@@ -1,5 +1,5 @@
 mkdir -p tmp
-cp start_cmd.py ../res/logo.ico tmp
+cp start_cmd.py ../assets/logo.ico tmp
 cd tmp || exit
 
 # 使用Pyinstaller将.py打包成.exe，并且指定图标
@@ -10,19 +10,19 @@ cd ../..
 # 删除旧的打包目录
 rm -rf dist
 # 创建新的打包目录
-mkdir -p dist/LangrisserRPA/bin dist/LangrisserRPA/res
+mkdir -p dist/LangrisserRPA/src dist/LangrisserRPA/assets
 
 # 入口文件拷贝
-cp bin/tmp/dist/start_cmd.exe dist/LangrisserRPA/bin
+cp src/tmp/dist/start_cmd.exe dist/LangrisserRPA/src
 # 示例图片拷贝
-cp -r res/img dist/LangrisserRPA/res
+cp -r assets/img dist/LangrisserRPA/assets
 
 cd dist || exit
 # 打包目录
 tar cvf LangrisserRPA.tar.gz LangrisserRPA
 
 # 删除临时文件
-rm -rf ../bin/tmp
+rm -rf ../src/tmp
 
 echo "打包完毕！"
 pwd
