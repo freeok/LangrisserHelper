@@ -21,7 +21,15 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../assets/logo.ico</normaloff>../../assets/logo.ico</iconset>
+    <normaloff>assets/logo.ico</normaloff>
+    assets/logo.ico
+   </iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -89,8 +97,11 @@
         <pointsize>14</pointsize>
        </font>
       </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background: #7ec050; color: #fff</string>
       </property>
       <property name="text">
        <string>启动游戏</string>
