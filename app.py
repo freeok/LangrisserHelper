@@ -1,9 +1,9 @@
 import sys
-import time
 
-import pyautogui
+from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox
 
+from src.task.CheckGameRunningTask import CheckGameRunningTask
 from src.task.SecretRealmSweepTask import SecretRealmSweepTask
 from src.task.StartGameTask import StartGameTask
 from src.ui.pyqt import Ui_MainWindow
@@ -27,14 +27,20 @@ class MyMainForm(QMainWindow, Ui_MainWindow):
         self.pushButton_abort.clicked.connect(self.abort_task)
         # 启动游戏按钮
         self.pushButton_start.clicked.connect(self.start_game)
+        # 启动检查游戏是否运行的线程
+        self.t3 = CheckGameRunningTask(self.pushButton_start)
+        self.t3.start()
 
+    # 秘境扫荡
     def secret_realm_sweep(self):
         self.t = SecretRealmSweepTask(self.sweep_pre_handle, self.sweep_post_handle)
         self.t.start()
 
+    # 每日任务
     def daily_tasks(self):
         QMessageBox.information(self, '信息', '功能开发中')
 
+    # 中止任务
     def abort_task(self):
         if self.t is not None and self.t.isRunning():
             self.t.terminate()
@@ -43,8 +49,13 @@ class MyMainForm(QMainWindow, Ui_MainWindow):
         else:
             QMessageBox.information(self, '信息', '无任务执行')
 
+    # 启动/关闭 游戏
     def start_game(self):
-        self.t2 = StartGameTask()
+        # self.pushButton_start.setWindowFlags(Qt.WindowType.WindowMaximizeButtonHint)
+        # 关闭之前启动的线程
+        if self.t2 is not None and self.t2.isRunning():
+            self.t2.terminate()
+        self.t2 = StartGameTask(self.pushButton_start.text())
         self.t2.start()
 
     # 线程任务执行前调用
