@@ -2,8 +2,10 @@ import time
 
 import pyautogui
 
+from src.common.constants import Consts
 
-class PyautoguiUtils:
+
+class PAGUtils:
 
     @staticmethod
     def click_gui(img):
@@ -50,9 +52,8 @@ class PyautoguiUtils:
 
     @staticmethod
     def click_godless_ball():
-        img_daily_path = 'assets/img/daily/'
         region_list = list(
-            pyautogui.locateAllOnScreen(img_daily_path + 'bless_ball.png', confidence=0.7, grayscale=True))
+            pyautogui.locateAllOnScreen(Consts.IMG_DAILY_PATH + 'bless_ball.png', confidence=0.7, grayscale=True))
         if len(region_list) != 0:
             region = region_list[-1]
             print(region.left, region.top)
