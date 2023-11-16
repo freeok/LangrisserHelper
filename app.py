@@ -1,5 +1,6 @@
 import sys
 
+from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox
 
 from src.task.CheckGameRunningTask import CheckGameRunningTask
@@ -17,7 +18,12 @@ class MyMainForm(QMainWindow, Ui_MainWindow):
         self.t = None
         # 次要线程：游戏启动
         self.t2 = None
+
         self.setupUi(self)
+        # 禁止调整窗口大小
+        self.setFixedSize(self.width(), self.height());
+        # 显示最小化和关闭按钮
+        self.setWindowFlags(Qt.WindowType.WindowMinimizeButtonHint | Qt.WindowType.WindowCloseButtonHint)
 
         # 扫荡秘境按钮
         self.pushButton_sweep.clicked.connect(self.secret_realm_sweep)
