@@ -12,7 +12,7 @@ img_daily_path = 'assets/img/daily/'
 # img_daily_path = '../assets/img/daily/'
 
 
-class RewardCollection:
+class Reward:
 
     def __init__(self):
         super().__init__()
@@ -31,3 +31,10 @@ class RewardCollection:
         PyautoguiUtils.click_gui(img_daily_path + 'collect_all.png')
         time.sleep(1)
         pyautogui.click(100, 100)
+
+    # 赠送/领取友情点
+    def friendship_reward(self):
+        PyautoguiUtils.click_gui(img_daily_path + 'friends.png')
+        PyautoguiUtils.click_gui(img_daily_path + 'friends_receive.png')
+        PyautoguiUtils.click_gui(img_daily_path + 'friends_give.png')
+        PyautoguiUtils.click_gui(img_daily_path + 'back.png')

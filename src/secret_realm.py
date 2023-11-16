@@ -1,7 +1,7 @@
 import time
 
 from src.pyautogui_utils import PyautoguiUtils
-from src.reward_collection import RewardCollection
+from src.reward import Reward
 
 img_dungeon_path = 'assets/img/dungeon/'
 img_daily_path = 'assets/img/daily/'
@@ -64,7 +64,7 @@ class SecretRealm:
 
         print('<== 扫荡秘境结束')
 
-        rc = RewardCollection()
-        rc.task_reward()
+        reward = Reward()
+        reward.task_reward()
 
         return 0

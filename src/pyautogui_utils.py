@@ -25,14 +25,14 @@ class PyautoguiUtils:
         while True:
             try:
                 location = pyautogui.locateCenterOnScreen(img1)
-                pyautogui.click(location.x, location.y, duration=0.2)
+                pyautogui.click(location.x, location.y, duration=0.3)
                 return True
             except pyautogui.ImageNotFoundException:
                 try:
                     print('样本图片 1 未匹配 {}，1 秒后尝试匹配图片 2（第 {} 次重试）'.format(img1, retry_num))
                     time.sleep(1)
                     location = pyautogui.locateCenterOnScreen(img2, confidence=0.8, grayscale=True)
-                    pyautogui.click(location.x, location.y, duration=0.2)
+                    pyautogui.click(location.x, location.y, duration=0.3)
                     return True
                 except pyautogui.ImageNotFoundException:
                     print('样本图片 2 未匹配 {}，1 秒后尝试匹配图片 1（第 {} 次重试）'.format(img2, retry_num))

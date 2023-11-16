@@ -8,7 +8,7 @@
     <x>0</x>
     <y>0</y>
     <width>300</width>
-    <height>253</height>
+    <height>315</height>
    </rect>
   </property>
   <property name="font">
@@ -21,9 +21,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>assets/logo.ico</normaloff>
-    assets/logo.ico
-   </iconset>
+    <normaloff>assets/logo.ico</normaloff>assets/logo.ico</iconset>
   </property>
   <property name="autoFillBackground">
    <bool>false</bool>
@@ -72,6 +70,21 @@
       </property>
       <property name="text">
        <string>每日任务</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_reward">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>领取奖励</string>
       </property>
      </widget>
     </item>
