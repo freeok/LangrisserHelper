@@ -27,7 +27,7 @@ class SecretRealm:
         # 点击确定
         PyautoguiUtils.click_gui(img_daily_path + 'confirm.png')
         # 再次扫荡
-        for i in range(n - 1):
+        for _ in range(n - 1):
             PyautoguiUtils.click_gui(img_daily_path + 'sweep_again.png')
         # 取消
         PyautoguiUtils.click_gui(img_daily_path + 'cancel.png')

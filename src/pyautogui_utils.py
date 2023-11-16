@@ -45,7 +45,7 @@ class PyautoguiUtils:
         width, height = pyautogui.size()
         pyautogui.moveTo(width / 2, height / 2, duration=0.3)
         time.sleep(1)
-        for i in range(n):
+        for _ in range(n):
             pyautogui.scroll(val)
 
     @staticmethod

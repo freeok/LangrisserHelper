@@ -29,7 +29,7 @@
 
 ![back.png](assets%2Fimg%2Fdaily%2Fback.png)
 ![confirm.png](assets%2Fimg%2Fdaily%2Fconfirm.png)
-![sweep.png](assets%2Fimg%2Fdaily%2Fsweep.png)
+![sweep1.png](assets%2Fimg%2Fdaily%2Fsweep1.png)
 ![sweep_again.png](assets%2Fimg%2Fdaily%2Fsweep_again.png)
 ![sweep2.png](assets%2Fimg%2Fdaily%2Fsweep2.png)
 

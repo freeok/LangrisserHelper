@@ -1,140 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author>pcdd</author>
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>300</width>
-    <height>315</height>
-   </rect>
-  </property>
-  <property name="font">
-   <font>
-    <pointsize>9</pointsize>
-   </font>
-  </property>
-  <property name="windowTitle">
-   <string>Langrisser Helper</string>
-  </property>
-  <property name="windowIcon">
-   <iconset>
-    <normaloff>assets/logo.ico</normaloff>assets/logo.ico</iconset>
-  </property>
-  <property name="autoFillBackground">
-   <bool>false</bool>
-  </property>
-  <property name="styleSheet">
-   <string notr="true"/>
-  </property>
-  <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QPushButton" name="pushButton_sweep">
-      <property name="baseSize">
-       <size>
-        <width>0</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string>扫荡秘境</string>
-      </property>
-      <property name="checkable">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_task">
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string>每日任务</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_reward">
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string>领取奖励</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_abort">
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string>中止执行</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_start">
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background: #7ec050; color: #fff</string>
-      </property>
-      <property name="text">
-       <string>启动游戏</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>300</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
- </widget>
- <resources/>
- <connections/>
+    <author>pcdd</author>
+    <class>MainWindow</class>
+    <widget class="QMainWindow" name="MainWindow">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>300</width>
+                <height>315</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>9</pointsize>
+            </font>
+        </property>
+        <property name="windowTitle">
+            <string>Langrisser Helper</string>
+        </property>
+        <property name="windowIcon">
+            <iconset>
+                <normaloff>assets/logo.ico</normaloff>assets/logo.ico
+            </iconset>
+        </property>
+        <property name="autoFillBackground">
+            <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+            <string notr="true"/>
+        </property>
+        <widget class="QWidget" name="centralwidget">
+            <layout class="QVBoxLayout" name="verticalLayout">
+                <item>
+                    <widget class="QPushButton" name="pushButton_sweep">
+                        <property name="baseSize">
+                            <size>
+                                <width>0</width>
+                                <height>0</height>
+                            </size>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>14</pointsize>
+                            </font>
+                        </property>
+                        <property name="autoFillBackground">
+                            <bool>false</bool>
+                        </property>
+                        <property name="styleSheet">
+                            <string notr="true"/>
+                        </property>
+                        <property name="text">
+                            <string>扫荡秘境</string>
+                        </property>
+                        <property name="checkable">
+                            <bool>false</bool>
+                        </property>
+                    </widget>
+                </item>
+                <item>
+                    <widget class="QPushButton" name="pushButton_task">
+                        <property name="font">
+                            <font>
+                                <pointsize>14</pointsize>
+                            </font>
+                        </property>
+                        <property name="styleSheet">
+                            <string notr="true"/>
+                        </property>
+                        <property name="text">
+                            <string>每日任务</string>
+                        </property>
+                    </widget>
+                </item>
+                <item>
+                    <widget class="QPushButton" name="pushButton_reward">
+                        <property name="font">
+                            <font>
+                                <pointsize>14</pointsize>
+                            </font>
+                        </property>
+                        <property name="styleSheet">
+                            <string notr="true"/>
+                        </property>
+                        <property name="text">
+                            <string>领取奖励</string>
+                        </property>
+                    </widget>
+                </item>
+                <item>
+                    <widget class="QPushButton" name="pushButton_abort">
+                        <property name="font">
+                            <font>
+                                <pointsize>14</pointsize>
+                            </font>
+                        </property>
+                        <property name="styleSheet">
+                            <string notr="true"/>
+                        </property>
+                        <property name="text">
+                            <string>中止执行</string>
+                        </property>
+                    </widget>
+                </item>
+                <item>
+                    <widget class="QPushButton" name="pushButton_start">
+                        <property name="font">
+                            <font>
+                                <pointsize>14</pointsize>
+                            </font>
+                        </property>
+                        <property name="autoFillBackground">
+                            <bool>false</bool>
+                        </property>
+                        <property name="styleSheet">
+                            <string notr="true">background: #7ec050; color: #fff</string>
+                        </property>
+                        <property name="text">
+                            <string>启动游戏</string>
+                        </property>
+                    </widget>
+                </item>
+            </layout>
+        </widget>
+        <widget class="QMenuBar" name="menubar">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>300</width>
+                    <height>22</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QStatusBar" name="statusbar"/>
+    </widget>
+    <resources/>
+    <connections/>
 </ui>
