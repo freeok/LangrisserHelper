@@ -1,9 +1,10 @@
 from PyQt6.QtCore import QThread
 
-from src.secret_realm import SecretRealm
+from src.reward import Reward
 
 
-class SecretRealmSweepTask(QThread):
+class CollectRewardTask(QThread):
+
     def __init__(self, func1, args1, func2, args2):
         super().__init__()
         self.func1 = func1
@@ -13,11 +14,11 @@ class SecretRealmSweepTask(QThread):
         self.args2 = args2
 
     def run(self):
-        # 任务完成前的方法
         self.func1(self.args1[0], self.args1[1])
 
-        # do something
-        SecretRealm().sweep()
+        reward = Reward()
+        reward.task_reward()
+        reward.friendship_reward()
+        reward.mail_reward()
 
-        # 任务完成后的方法
         self.func2(self.args2[0], self.args2[1])
