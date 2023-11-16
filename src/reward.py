@@ -8,6 +8,7 @@ from src.pyautogui_utils import PyautoguiUtils
 # 在 class 中运行的路径
 img_daily_path = 'assets/img/daily/'
 
+
 # 不在 class 中运行的路径
 # img_daily_path = '../assets/img/daily/'
 

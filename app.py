@@ -21,7 +21,7 @@ class MyMainForm(QMainWindow, Ui_MainWindow):
 
         self.setupUi(self)
         # 禁止调整窗口大小
-        self.setFixedSize(self.width(), self.height());
+        self.setFixedSize(self.width(), self.height())
         # 显示最小化和关闭按钮
         self.setWindowFlags(Qt.WindowType.WindowMinimizeButtonHint | Qt.WindowType.WindowCloseButtonHint)
 
@@ -66,7 +66,6 @@ class MyMainForm(QMainWindow, Ui_MainWindow):
 
     # 启动/关闭 游戏
     def start_game(self):
-        # self.pushButton_start.setWindowFlags(Qt.WindowType.WindowMaximizeButtonHint)
         # 关闭之前启动的线程
         if self.t2 is not None and self.t2.isRunning():
             self.t2.terminate()

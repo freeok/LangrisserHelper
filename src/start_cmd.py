@@ -14,11 +14,10 @@ width, height = pyautogui.size()
 def scroll(val, n):
     pyautogui.moveTo(width / 2, height / 2, duration=0.3)
     time.sleep(1)
-    for i in range(n):
+    for _ in range(n):
         pyautogui.scroll(val)
 
 
-# TODO 秘境扫荡
 def sweep():
     # 秘境
     click_gui2(img_daily_path + 'secret_realm1.png', img_daily_path + 'secret_realm2.png')
@@ -27,7 +26,6 @@ def sweep():
     click_gui(img_daily_path + 'dear_brother1.png')
     time.sleep(2)
     click_gui(img_daily_path + 'back.png')
-    # TODO 扫荡按钮
 
     # 女神的试炼
     click_gui(img_daily_path + 'goddess.png')
@@ -49,12 +47,6 @@ def sweep():
 
     # 返回主界面
     click_gui(img_daily_path + 'back.png')
-
-
-# TODO 每日任务
-
-
-# TODO 日常操作：扫荡秘境 + 每日任务 + 命运之扉 + 友情点赠送/领取 + 邮件一键领取
 
 
 # 刷副本
@@ -113,13 +105,11 @@ def click_gui2(img1, img2):
             location = pyautogui.locateCenterOnScreen(img1, confidence=0.9, grayscale=True)
             # 单击坐标位置，duration表示移动光标的耗时（秒）
             pyautogui.click(location.x, location.y, duration=0.2)
-            return True
         except pyautogui.ImageNotFoundException:
             print('开始匹配图片2')
             try:
                 location = pyautogui.locateCenterOnScreen(img2, confidence=0.9, grayscale=True)
                 pyautogui.click(location.x, location.y, duration=0.2)
-                return True
             except pyautogui.ImageNotFoundException:
                 print('未匹配到样本图片%s，1秒后重试' % img2)
                 time.sleep(1)
@@ -176,7 +166,5 @@ if __name__ == '__main__':
             print(
                 '1. 核心原理是利用图片识别定位实现的，因此该脚本不支持后台运行，也就是说运行期间必须保证游戏窗口完整的置于最上层以及显示器常亮(锁屏也不行)。')
             print('2. 使用风险由使用者自己承担。')
-            continue
         else:
             print('您输入的指令有误，请按提示输入！')
-            continue
