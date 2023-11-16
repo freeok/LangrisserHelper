@@ -24,7 +24,7 @@ def sweep():
     click_gui2(img_daily_path + 'secret_realm1.png', img_daily_path + 'secret_realm2.png')
 
     # 兄贵健身房
-    click_gui(img_daily_path + 'dear_brother.png')
+    click_gui(img_daily_path + 'dear_brother1.png')
     time.sleep(2)
     click_gui(img_daily_path + 'back.png')
     # TODO 扫荡按钮
