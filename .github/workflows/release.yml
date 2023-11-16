@@ -33,7 +33,7 @@ jobs:
       - name: Create Release
         uses: ncipollo/release-action@v1.10.0
         with:
-          artifacts: "dist/LangrisserRPA.tar.gz"
+          artifacts: "dist/LangrisserHelper.tar.gz"
           # 相对于项目根路径
           bodyFile: "CHANGELOG.md"
           token: ${{ secrets.GITHUB_TOKEN  }}

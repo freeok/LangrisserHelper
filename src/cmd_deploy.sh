@@ -10,16 +10,16 @@ cd ../..
 # 删除旧的打包目录
 rm -rf dist
 # 创建新的打包目录
-mkdir -p dist/LangrisserRPA/src dist/LangrisserRPA/assets
+mkdir -p dist/LangrisserHelper/src dist/LangrisserHelper/assets
 
 # 入口文件拷贝
-cp src/tmp/dist/start_cmd.exe dist/LangrisserRPA/src
+cp src/tmp/dist/start_cmd.exe dist/LangrisserHelper/src
 # 示例图片拷贝
-cp -r assets/img dist/LangrisserRPA/assets
+cp -r assets/img dist/LangrisserHelper/assets
 
 cd dist || exit
 # 打包目录
-tar cvf LangrisserRPA.tar.gz LangrisserRPA
+tar cvf LangrisserHelper.tar.gz LangrisserHelper
 
 # 删除临时文件
 rm -rf ../src/tmp
