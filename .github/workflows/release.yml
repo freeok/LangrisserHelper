@@ -31,7 +31,7 @@ jobs:
       - run: cd src && sh cmd_deploy.sh
       # Release
       - name: Create Release
-        uses: ncipollo/release-action@v1.10.0
+        uses: ncipollo/release-action@v1
         with:
           artifacts: "dist/LangrisserHelper.tar.gz"
           # 相对于项目根路径
