@@ -31,9 +31,10 @@ class Reward:
     def mail_reward(self):
         PAGUtils.click_gui2(img_daily_path + 'mail1.png', img_daily_path + 'mail2.png')
         PAGUtils.click_gui(img_daily_path + 'collect_all.png')
+        # 等待奖励界面弹出
         time.sleep(1)
-        PAGUtils.click_gui(Consts.IMG_BACK)
-        PAGUtils.click_gui(Consts.IMG_BACK)
+        pyautogui.click(100, 100)
+        pyautogui.click(100, 100)
 
     # 赠送/领取友情点
     def friendship_reward(self):

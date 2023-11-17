@@ -15,7 +15,7 @@ class StartGameTask(QThread):
         # 启动游戏
         if self.text == '启动游戏':
             pyautogui.press('win')
-            pyautogui.typewrite('PDLauncher')
+            pyautogui.typewrite('PDLauncher', interval=0.01)
             pyautogui.press('enter')
             # 此时要选择是、否按钮打开程序，pyautogui 无效，暂时手动选择
             # pyautogui.press('left')
