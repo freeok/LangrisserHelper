@@ -14,7 +14,7 @@ class PAGUtils:
             try:
                 location = pyautogui.locateCenterOnScreen(img, confidence=0.8, grayscale=True)
                 # 单击坐标位置，duration表示移动光标的耗时
-                pyautogui.click(location.x, location.y, duration=0.3)
+                pyautogui.click(location.x, location.y, duration=0.2)
                 return True
             # pyautogui 0.9.41 前，找不到图像返回 None，之后改为抛 ImageNotFoundException 异常
             except pyautogui.ImageNotFoundException:
@@ -27,14 +27,14 @@ class PAGUtils:
         while True:
             try:
                 location = pyautogui.locateCenterOnScreen(img1)
-                pyautogui.click(location.x, location.y, duration=0.3)
+                pyautogui.click(location.x, location.y, duration=0.2)
                 return True
             except pyautogui.ImageNotFoundException:
                 try:
                     print('样本图片 1 未匹配 {}，1 秒后尝试匹配图片 2（第 {} 次重试）'.format(img1, retry_num))
                     time.sleep(1)
                     location = pyautogui.locateCenterOnScreen(img2, confidence=0.8, grayscale=True)
-                    pyautogui.click(location.x, location.y, duration=0.3)
+                    pyautogui.click(location.x, location.y, duration=0.2)
                     return True
                 except pyautogui.ImageNotFoundException:
                     print('样本图片 2 未匹配 {}，1 秒后尝试匹配图片 1（第 {} 次重试）'.format(img2, retry_num))
@@ -45,7 +45,7 @@ class PAGUtils:
     def scroll(val, n):
         # 屏幕尺寸
         width, height = pyautogui.size()
-        pyautogui.moveTo(width / 2, height / 2, duration=0.3)
+        pyautogui.moveTo(width / 2, height / 2, duration=0.2)
         time.sleep(1)
         for _ in range(n):
             pyautogui.scroll(val)
@@ -57,4 +57,4 @@ class PAGUtils:
         if len(region_list) != 0:
             region = region_list[-1]
             print(region.left, region.top)
-            pyautogui.click(region.left, region.top, duration=0.3)
+            pyautogui.click(region.left, region.top, duration=0.2)

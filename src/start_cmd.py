@@ -10,45 +10,6 @@ img_daily_path = '../assets/img/daily/'
 width, height = pyautogui.size()
 
 
-# 连续滚动
-def scroll(val, n):
-    pyautogui.moveTo(width / 2, height / 2, duration=0.3)
-    time.sleep(1)
-    for _ in range(n):
-        pyautogui.scroll(val)
-
-
-def sweep():
-    # 秘境
-    click_gui2(img_daily_path + 'secret_realm1.png', img_daily_path + 'secret_realm2.png')
-
-    # 兄贵健身房
-    click_gui(img_daily_path + 'dear_brother1.png')
-    time.sleep(2)
-    click_gui(img_daily_path + 'back.png')
-
-    # 女神的试炼
-    click_gui(img_daily_path + 'goddess.png')
-    time.sleep(2)
-    click_gui(img_daily_path + 'back.png')
-    # 移动光标，向下滚动10次
-    scroll(-1, 10)
-
-    # 羁绊之地
-    click_gui(img_daily_path + 'bond.png')
-    time.sleep(2)
-    click_gui(img_daily_path + 'back.png')
-    scroll(-1, 25)
-
-    # 永恒的神殿
-    click_gui(img_daily_path + 'temple.png')
-    time.sleep(2)
-    click_gui(img_daily_path + 'back.png')
-
-    # 返回主界面
-    click_gui(img_daily_path + 'back.png')
-
-
 # 刷副本
 def dungeon(tag, num):
     auto_once = True
@@ -139,13 +100,9 @@ if __name__ == '__main__':
 
     while True:
         print('\n请选择功能:')
-        print('1.秘境扫荡')
         print('2.刷秘境副本')
         print('3.使用须知')
         code = input('请输入：')
-        if code == '1':
-            sweep()
-            continue
         if code == '2':
             while True:
                 print('1.无限刷(体力耗尽为止) 2.指定次数')
