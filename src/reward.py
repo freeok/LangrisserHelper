@@ -34,11 +34,14 @@ class Reward:
         # 等待奖励界面弹出
         time.sleep(1)
         pyautogui.click(100, 100)
+        time.sleep(1)
         pyautogui.click(100, 100)
 
     # 赠送/领取友情点
     def friendship_reward(self):
         PAGUtils.click_gui(img_daily_path + 'friends.png')
         PAGUtils.click_gui(img_daily_path + 'friends_receive.png')
+        # 等待领取成功的提示
+        time.sleep(1)
         PAGUtils.click_gui(img_daily_path + 'friends_give.png')
         PAGUtils.click_gui(Consts.IMG_BACK)
