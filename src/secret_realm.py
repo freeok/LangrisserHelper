@@ -17,22 +17,23 @@ class SecretRealm:
     # img 图片 n 扫荡次数
     def func(self, img_list, n):
         if len(img_list) == 1:
-            PAGUtils.click_gui(img_daily_path + img_list[0])
+            PAGUtils.click_img(img_daily_path + img_list[0])
         elif len(img_list) > 1:
-            PAGUtils.click_gui2(img_daily_path + img_list[0], img_daily_path + img_list[1])
+            PAGUtils.click_imgs(img_daily_path + img_list[0], img_daily_path + img_list[1])
+        # 等待进入界面
         time.sleep(2)
         # 点击女神球
         PAGUtils.click_godless_ball()
         # 点击扫荡，按钮默认为蓝色，消耗通行证时为黄色
-        PAGUtils.click_gui2(img_daily_path + 'sweep1.png', img_daily_path + 'sweep2.png')
+        PAGUtils.click_imgs(img_daily_path + 'sweep1.png', img_daily_path + 'sweep2.png')
         # 点击确定
-        PAGUtils.click_gui(img_daily_path + 'confirm.png')
+        PAGUtils.click_img(img_daily_path + 'confirm.png')
         # 再次扫荡
         for _ in range(n - 1):
-            PAGUtils.click_gui(img_daily_path + 'sweep_again.png')
+            PAGUtils.click_img(img_daily_path + 'sweep_again.png')
         # 取消
-        PAGUtils.click_gui(img_daily_path + 'cancel.png')
-        PAGUtils.click_gui(img_daily_path + 'back.png')
+        PAGUtils.click_img(img_daily_path + 'cancel.png')
+        PAGUtils.click_img(img_daily_path + 'back.png')
 
     # 扫荡秘境
     def sweep(self):
@@ -40,7 +41,7 @@ class SecretRealm:
         print('==> 开始扫荡秘境')
 
         # 进入秘境
-        PAGUtils.click_gui(img_daily_path + 'secret_realm.png')
+        PAGUtils.click_img(img_daily_path + 'secret_realm.png')
 
         # 兄贵健身房（普通玩家2次，月卡玩家3次）（可全部开放），兄贵的图有两种情况，一大一小
         self.func(['dear_brother1.png', 'dear_brother2.png'], 2)
@@ -62,7 +63,7 @@ class SecretRealm:
         # TODO 律定之途（可全部开放）
 
         # 返回主界面
-        PAGUtils.click_gui(img_daily_path + 'back.png')
+        PAGUtils.click_img(img_daily_path + 'back.png')
 
         print('<== 扫荡秘境结束')
 
