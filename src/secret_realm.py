@@ -15,7 +15,7 @@ class SecretRealm:
         super().__init__()
 
     # img 图片 n 扫荡次数
-    def fun(self, img_list, n):
+    def func(self, img_list, n):
         if len(img_list) == 1:
             PAGUtils.click_gui(img_daily_path + img_list[0])
         elif len(img_list) > 1:
@@ -36,27 +36,28 @@ class SecretRealm:
 
     # 扫荡秘境
     def sweep(self):
+        # TODO 进入世界后操作，不要在浮空城操作，图片干扰因素多
         print('==> 开始扫荡秘境')
 
         # 进入秘境
-        PAGUtils.click_gui2(img_daily_path + 'secret_realm1.png', img_daily_path + 'secret_realm2.png')
+        PAGUtils.click_gui(img_daily_path + 'secret_realm.png')
 
         # 兄贵健身房（普通玩家2次，月卡玩家3次）（可全部开放），兄贵的图有两种情况，一大一小
-        self.fun(['dear_brother1.png', 'dear_brother2.png'], 2)
+        self.func(['dear_brother1.png', 'dear_brother2.png'], 2)
 
         # 女神的试炼（普通玩家1次，月卡玩家2次）
-        self.fun(['goddess.png'], 1)
+        self.func(['goddess.png'], 1)
 
         # 滚轮向下滚动n次
         PAGUtils.scroll(-1, 10)
 
         # 羁绊之地
-        self.fun(['bond.png'], 1)
+        self.func(['bond.png'], 1)
 
         PAGUtils.scroll(-1, 25)
 
         # 永恒的神殿
-        self.fun(['temple.png'], 1)
+        self.func(['temple.png'], 1)
 
         # TODO 律定之途（可全部开放）
 

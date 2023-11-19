@@ -21,7 +21,7 @@ class Reward:
 
     # 一键领取任务奖励
     def task_reward(self):
-        PAGUtils.click_gui2(img_daily_path + 'task1.png', img_daily_path + 'task2.png')
+        PAGUtils.click_gui(img_daily_path + 'task.png')
         PAGUtils.click_gui(img_daily_path + 'collect_all.png')
         time.sleep(1)
         pyautogui.click(100, 100)
@@ -29,7 +29,7 @@ class Reward:
 
     # 一键领取邮件奖励
     def mail_reward(self):
-        PAGUtils.click_gui2(img_daily_path + 'mail1.png', img_daily_path + 'mail2.png')
+        PAGUtils.click_gui(img_daily_path + 'mail.png')
         PAGUtils.click_gui(img_daily_path + 'collect_all.png')
         # 等待奖励界面弹出
         time.sleep(1)

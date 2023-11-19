@@ -1,6 +1,7 @@
 from PyQt6.QtCore import QThread
 
 from src.reward import Reward
+from src.util.pyautogui_utils import PAGUtils
 from src.util.window_utils import WindowUtils
 
 
@@ -16,6 +17,8 @@ class CollectRewardTask(QThread):
 
     def run(self):
         WindowUtils.maximize('梦幻模拟战')
+
+        PAGUtils.click_gui('assets/img/world.png', False)
 
         self.func1(self.args1[0], self.args1[1])
 
