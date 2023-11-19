@@ -1,6 +1,7 @@
 from PyQt6.QtCore import QThread
 
 from src.reward import Reward
+from src.util.window_utils import WindowUtils
 
 
 class CollectRewardTask(QThread):
@@ -14,6 +15,8 @@ class CollectRewardTask(QThread):
         self.args2 = args2
 
     def run(self):
+        WindowUtils.maximize('梦幻模拟战')
+
         self.func1(self.args1[0], self.args1[1])
 
         reward = Reward()

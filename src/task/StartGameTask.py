@@ -1,15 +1,16 @@
-import time
-
 import pyautogui
 import pygetwindow as gw
 from PyQt6.QtCore import QThread
 
+from src.util.window_utils import WindowUtils
+
 
 class StartGameTask(QThread):
 
-    def __init__(self, text):
+    def __init__(self, btn):
         super().__init__()
-        self.text = text
+        self.btn = btn
+        self.text = btn.text()
 
     def run(self):
         # 启动游戏
@@ -21,17 +22,7 @@ class StartGameTask(QThread):
             # pyautogui.press('left')
             # pyautogui.press('enter')
 
-            while True:
-                w_arr = gw.getWindowsWithTitle('梦幻模拟战')
-                if len(w_arr) > 0:
-                    print('检测到游戏窗口')
-                    w = w_arr[0]
-                    # 窗口最大化
-                    w.maximize()
-                    break
-                else:
-                    print('未检测到游戏窗口，1 秒后重试')
-                    time.sleep(1)
+            WindowUtils.maximize('梦幻模拟战', True)
         # 关闭游戏
         elif self.text == '关闭游戏':
             w = gw.getWindowsWithTitle('梦幻模拟战')[0]

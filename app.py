@@ -69,7 +69,7 @@ class MyMainForm(QMainWindow, Ui_MainWindow):
         # 关闭之前启动的线程
         if self.t2 is not None and self.t2.isRunning():
             self.t2.terminate()
-        self.t2 = StartGameTask(self.pushButton_start.text())
+        self.t2 = StartGameTask(self.pushButton_start)
         self.t2.start()
 
     # 线程任务执行前调用
