@@ -1,6 +1,7 @@
 from PyQt6.QtCore import QThread
 
 from src.secret_realm import SecretRealm
+from src.util.window_utils import WindowUtils
 
 
 class SecretRealmSweepTask(QThread):
@@ -13,6 +14,8 @@ class SecretRealmSweepTask(QThread):
         self.args2 = args2
 
     def run(self):
+        WindowUtils.maximize('梦幻模拟战')
+
         # 任务完成前的方法
         self.func1(self.args1[0], self.args1[1])
 
