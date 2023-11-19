@@ -8,7 +8,7 @@ from src.common.constants import Consts
 class PAGUtils:
 
     @staticmethod
-    def click_gui(img, retry=True):
+    def click_img(img, retry=True):
         while True:
             # 获取图片定位，当grayscale=True时会使图像和屏幕截图中的颜色去饱和，解决由于显示器饱和度不同从而引起的颜色细微差异因而导致的图像定位失败问题。
             try:
@@ -25,7 +25,7 @@ class PAGUtils:
                     break
 
     @staticmethod
-    def click_gui2(img1, img2):
+    def click_imgs(img1, img2):
         retry_num = 0
         while True:
             try:
@@ -43,6 +43,14 @@ class PAGUtils:
                     print('样本图片 2 未匹配 {}，1 秒后尝试匹配图片 1（第 {} 次重试）'.format(img2, retry_num))
                     retry_num += 1
                     time.sleep(1)
+
+    @staticmethod
+    def img_exists(img):
+        try:
+            pyautogui.locateCenterOnScreen(img, confidence=0.8, grayscale=True)
+            return True
+        except pyautogui.ImageNotFoundException:
+            return False
 
     @staticmethod
     def scroll(val, n):

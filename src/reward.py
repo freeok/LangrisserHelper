@@ -21,27 +21,39 @@ class Reward:
 
     # 一键领取任务奖励
     def task_reward(self):
-        PAGUtils.click_gui(img_daily_path + 'task.png')
-        PAGUtils.click_gui(img_daily_path + 'collect_all.png')
-        time.sleep(1)
-        pyautogui.click(100, 100)
-        PAGUtils.click_gui(Consts.IMG_BACK)
+        PAGUtils.click_img(img_daily_path + 'task.png')
+
+        # 进入任务界面的加载时间不确定，故用此方法
+        PAGUtils.click_img(img_daily_path + 'title_task.png')
+        # 有奖励可领取
+        found = PAGUtils.img_exists(img_daily_path + 'receive.png')
+        if found:
+            PAGUtils.click_img(img_daily_path + 'collect_all.png')
+            time.sleep(1)
+            pyautogui.click(100, 100)
+            PAGUtils.click_img(Consts.IMG_BACK)
+        else:
+            PAGUtils.click_img(Consts.IMG_BACK)
 
     # 一键领取邮件奖励
     def mail_reward(self):
-        PAGUtils.click_gui(img_daily_path + 'mail.png')
-        PAGUtils.click_gui(img_daily_path + 'collect_all.png')
-        # 等待奖励界面弹出
-        time.sleep(1)
-        pyautogui.click(100, 100)
-        time.sleep(1)
-        pyautogui.click(100, 100)
+        PAGUtils.click_img(img_daily_path + 'mail.png')
+        time.sleep(2)
+        found = PAGUtils.click_img(img_daily_path + 'collect_all.png', False)
+        if found:
+            # 等待奖励界面弹出
+            time.sleep(1)
+            pyautogui.click(100, 100)
+            time.sleep(1)
+            pyautogui.click(100, 100)
+        else:
+            pyautogui.click(100, 100)
 
     # 赠送/领取友情点
     def friendship_reward(self):
-        PAGUtils.click_gui(img_daily_path + 'friends.png')
-        PAGUtils.click_gui(img_daily_path + 'friends_receive.png')
+        PAGUtils.click_img(img_daily_path + 'friends.png')
+        PAGUtils.click_img(img_daily_path + 'friends_receive.png')
         # 等待领取成功的提示
         time.sleep(1)
-        PAGUtils.click_gui(img_daily_path + 'friends_give.png')
-        PAGUtils.click_gui(Consts.IMG_BACK)
+        PAGUtils.click_img(img_daily_path + 'friends_give.png')
+        PAGUtils.click_img(Consts.IMG_BACK)

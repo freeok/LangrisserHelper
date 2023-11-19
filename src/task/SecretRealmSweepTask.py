@@ -17,7 +17,7 @@ class SecretRealmSweepTask(QThread):
     def run(self):
         WindowUtils.maximize('梦幻模拟战')
 
-        PAGUtils.click_gui('assets/img/world.png', False)
+        PAGUtils.click_img('assets/img/world.png', False)
 
         # 任务完成前的方法
         self.func1(self.args1[0], self.args1[1])
