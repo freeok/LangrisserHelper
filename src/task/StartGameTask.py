@@ -22,7 +22,6 @@ class StartGameTask(QThread):
             # pyautogui.press('left')
             # pyautogui.press('enter')
 
-            WindowUtils.maximize('梦幻模拟战', True)
         # 关闭游戏
         elif self.text == '关闭游戏':
             w = gw.getWindowsWithTitle('梦幻模拟战')[0]
