@@ -63,6 +63,7 @@ class PAGUtils:
         for _ in range(n):
             pyautogui.scroll(val)
 
+    # 点击最高等级（最下方）的扫荡球
     @staticmethod
     def click_godless_ball():
         region_list = list(

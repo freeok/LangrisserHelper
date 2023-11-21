@@ -24,3 +24,5 @@ class SecretRealmSweepTask(QThread):
 
         # 任务完成后的方法
         self.func2(self.args2[0], self.args2[1])
+
+        WindowUtils.restore('梦幻模拟战')

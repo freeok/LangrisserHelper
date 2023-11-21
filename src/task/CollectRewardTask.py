@@ -26,3 +26,5 @@ class CollectRewardTask(QThread):
         reward.mail_reward()
 
         self.func2(self.args2[0], self.args2[1])
+
+        WindowUtils.restore('梦幻模拟战')

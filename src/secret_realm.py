@@ -58,6 +58,8 @@ class SecretRealm:
         # 滚轮向下滚动n次
         PAGUtils.scroll(-1, 10)
 
+        # TODO 逃跑的宝藏
+
         # 羁绊之地
         self.func(['bond.png'], 1)
 
