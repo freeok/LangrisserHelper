@@ -18,8 +18,6 @@ class CollectRewardTask(QThread):
     def run(self):
         WindowUtils.maximize('梦幻模拟战')
 
-        PAGUtils.click_img('assets/img/world.png', False)
-
         self.func1(self.args1[0], self.args1[1])
 
         reward = Reward()
