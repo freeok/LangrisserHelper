@@ -1,10 +1,16 @@
-## [v0.4.0-beta.1](https://github.com/pcdd-group/LangrisserHelper/releases/tag/v0.4.0-beta.1) (2023-11-16)
+## [v0.5.0-beta.1](https://github.com/pcdd-group/LangrisserHelper/releases/tag/v0.5.0-beta.1) (2023-11-21)
 
 ### Features
 
-* 新增一键领取奖励功能
+* 新增奖励内容截图功能
+
+### Bug Fixes
+
+* 修复领取奖励问题
+* 修复兄贵扫荡按钮不识别
 
 ### Others
 
-* 优化秘境扫荡兄贵
-* 固定窗口大小、禁用最大化
+* 更换 logo
+* 重构 pyautogui_utils.click_gui()
+* 优化 reward.py
