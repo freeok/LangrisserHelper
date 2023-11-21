@@ -18,19 +18,25 @@ class SecretRealm:
     def func(self, img_list, n):
         if len(img_list) == 1:
             PAGUtils.click_img(img_daily_path + img_list[0])
+        # 兄贵，特殊处理
         elif len(img_list) > 1:
             PAGUtils.click_imgs(img_daily_path + img_list[0], img_daily_path + img_list[1])
         # 等待进入界面
         time.sleep(2)
         # 点击女神球
         PAGUtils.click_godless_ball()
+        # 兄贵的扫荡图和其它的貌似不一样
+        img_sweep = img_daily_path + ('sweep_xg.png' if len(img_list) > 1 else 'sweep1.png')
         # 点击扫荡，按钮默认为蓝色，消耗通行证时为黄色
-        PAGUtils.click_imgs(img_daily_path + 'sweep1.png', img_daily_path + 'sweep2.png')
+        PAGUtils.click_imgs(img_sweep, img_daily_path + 'sweep2.png')
+        # 截图保存奖励内容
+        PAGUtils.screenshot('秘境扫荡奖励结果')
         # 点击确定
         PAGUtils.click_img(img_daily_path + 'confirm.png')
         # 再次扫荡
         for _ in range(n - 1):
             PAGUtils.click_img(img_daily_path + 'sweep_again.png')
+            PAGUtils.screenshot('秘境扫荡奖励结果')
         # 取消
         PAGUtils.click_img(img_daily_path + 'cancel.png')
         PAGUtils.click_img(img_daily_path + 'back.png')

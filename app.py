@@ -61,6 +61,7 @@ class MyMainForm(QMainWindow, Ui_MainWindow):
             self.t.terminate()
             self.set_btn_disable(False)
             self.btn_font_reset()
+            print('中止执行')
         else:
             QMessageBox.information(self, '信息', '无任务执行')
 

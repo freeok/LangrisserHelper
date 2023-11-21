@@ -17,12 +17,9 @@ class SecretRealmSweepTask(QThread):
     def run(self):
         WindowUtils.maximize('梦幻模拟战')
 
-        PAGUtils.click_img('assets/img/world.png', False)
-
         # 任务完成前的方法
         self.func1(self.args1[0], self.args1[1])
 
-        # do something
         SecretRealm().sweep()
 
         # 任务完成后的方法
