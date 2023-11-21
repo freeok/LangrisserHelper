@@ -1,3 +1,5 @@
+from datetime import datetime
+import os
 import time
 
 import pyautogui
@@ -69,3 +71,11 @@ class PAGUtils:
             region = region_list[-1]
             print(region.left, region.top)
             pyautogui.click(region.left, region.top, duration=0.2)
+
+    @staticmethod
+    def screenshot(img_name):
+        path = 'screenshot/{}/'.format(datetime.now().strftime('%Y-%m-%d'))
+        if not os.path.exists(path):
+            os.makedirs(path)
+        im1 = pyautogui.screenshot()
+        im1.save(path + '{}_{}.png'.format(img_name, datetime.now().strftime("%H-%M-%S")))

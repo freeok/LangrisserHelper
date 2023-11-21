@@ -30,6 +30,7 @@ class Reward:
         if found:
             PAGUtils.click_img(img_daily_path + 'collect_all.png')
             time.sleep(1)
+            PAGUtils.screenshot('任务奖励领取内容')
             pyautogui.click(100, 100)
             PAGUtils.click_img(Consts.IMG_BACK)
         else:
@@ -43,6 +44,7 @@ class Reward:
         if found:
             # 等待奖励界面弹出
             time.sleep(1)
+            PAGUtils.screenshot('邮件奖励领取内容')
             pyautogui.click(100, 100)
             time.sleep(1)
             pyautogui.click(100, 100)
