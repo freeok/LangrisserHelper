@@ -1,7 +1,6 @@
 from PyQt6.QtCore import QThread
 
 from src.reward import Reward
-from src.util.pyautogui_utils import PAGUtils
 from src.util.window_utils import WindowUtils
 
 
