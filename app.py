@@ -8,6 +8,7 @@ from src.task.CollectRewardTask import CollectRewardTask
 from src.task.SecretRealmSweepTask import SecretRealmSweepTask
 from src.task.StartGameTask import StartGameTask
 from src.ui.pyqt import Ui_MainWindow
+from src.util.window_utils import WindowUtils
 
 
 class MyMainForm(QMainWindow, Ui_MainWindow):
@@ -39,6 +40,19 @@ class MyMainForm(QMainWindow, Ui_MainWindow):
         self.t3 = CheckGameRunningTask(self.pushButton_start)
         self.t3.start()
 
+        # 连接 sys.stdout 实现 print() 在控件打印
+        # sys.stdout = self
+
+    # #   sys.stdout 模块下的write 和 flush 在此重写
+    # def write(self, text):
+    #     o = self.plainTextEdit
+    #     o.insertPlainText(text)
+    #     # 不用线程会卡死
+    #     # o.moveCursor(o.textCursor().atEnd())
+    #
+    # def flush(self):
+    #     pass
+
     # 秘境扫荡
     def secret_realm_sweep(self):
         self.t = SecretRealmSweepTask(self.btn_pre_handle, [self.pushButton_sweep, '扫荡中 ...'],
@@ -61,6 +75,7 @@ class MyMainForm(QMainWindow, Ui_MainWindow):
             self.t.terminate()
             self.set_btn_disable(False)
             self.btn_font_reset()
+            WindowUtils.restore('梦幻模拟战')
             print('中止执行')
         else:
             QMessageBox.information(self, '信息', '无任务执行')

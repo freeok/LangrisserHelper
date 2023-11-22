@@ -2,8 +2,6 @@ import pyautogui
 import pygetwindow as gw
 from PyQt6.QtCore import QThread
 
-from src.util.window_utils import WindowUtils
-
 
 class StartGameTask(QThread):
 
