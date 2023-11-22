@@ -1,5 +1,7 @@
 import time
 
+import pyautogui
+
 from src.common.constants import Consts
 from src.reward import Reward
 from src.util.pyautogui_utils import PAGUtils
@@ -29,17 +31,29 @@ class SecretRealm:
         img_sweep = img_daily_path + ('sweep_xg.png' if len(img_list) > 1 else 'sweep1.png')
         # 点击扫荡，按钮默认为蓝色，消耗通行证时为黄色
         PAGUtils.click_imgs(img_sweep, img_daily_path + 'sweep2.png')
-        # 截图保存奖励内容
-        PAGUtils.screenshot('秘境扫荡奖励结果')
         # 点击确定
         PAGUtils.click_img(img_daily_path + 'confirm.png')
+        # 等待奖励结果
+        PAGUtils.click_img(img_daily_path + 'sweep_results.png')
+        # 截图保存奖励内容
+        PAGUtils.screenshot('秘境扫荡奖励结果')
         # 再次扫荡
         for _ in range(n - 1):
             PAGUtils.click_img(img_daily_path + 'sweep_again.png')
+            # 等待奖励结果
+            PAGUtils.click_img(img_daily_path + 'sweep_results.png')
             PAGUtils.screenshot('秘境扫荡奖励结果')
         # 取消
         PAGUtils.click_img(img_daily_path + 'cancel.png')
         PAGUtils.click_img(img_daily_path + 'back.png')
+
+    # 逃跑的宝藏
+    def escaped_treasure(self):
+        PAGUtils.click_img(img_daily_path + 'escaped_treasure.png')
+        PAGUtils.click_img(img_daily_path + 'sweep_gold.png')
+        pyautogui.click(300, 300)
+        PAGUtils.click_img(img_daily_path + 'back.png')
+        PAGUtils.scroll(-1, 10)
 
     # 扫荡秘境
     def sweep(self):
@@ -58,7 +72,8 @@ class SecretRealm:
         # 滚轮向下滚动n次
         PAGUtils.scroll(-1, 10)
 
-        # TODO 逃跑的宝藏
+        # 逃跑的宝藏
+        self.escaped_treasure()
 
         # 羁绊之地
         self.func(['bond.png'], 1)
