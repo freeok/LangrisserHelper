@@ -17,3 +17,5 @@ tar cvf LangrisserHelper.tar.gz LangrisserHelper
 rm -rf LangrisserHelper
 
 echo "打包完毕！"
+
+pwd

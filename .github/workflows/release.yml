@@ -33,6 +33,7 @@ jobs:
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
+          # 供用户下载使用的最终产物
           artifacts: "dist/LangrisserHelper.tar.gz"
           # 相对于项目根路径
           bodyFile: "CHANGELOG.md"
