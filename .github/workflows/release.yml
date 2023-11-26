@@ -22,13 +22,13 @@ jobs:
       # 安装依赖
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
           pip install pyautogui
           pip install opencv-python
-          pip install pillow
+          pip install pygetwindow
+          pip install pyqt6
           pip install pyinstaller
       # Build
-      - run: cd src && sh cmd_deploy.sh
+      - run: sh deploy.sh
       # Release
       - name: Create Release
         uses: ncipollo/release-action@v1

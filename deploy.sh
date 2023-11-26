@@ -6,12 +6,14 @@ cp -r assets dist
 
 cd dist
 
-mkdir Langrisser-Helper
+mkdir LangrisserHelper
 
-cp -r assets Langrisser-Helper
-cp app.exe Langrisser-Helper
+cp -r assets LangrisserHelper
+cp app.exe LangrisserHelper
 
 # 打包目录
-tar cvf Langrisser-Helper.tar.gz Langrisser-Helper
+tar cvf LangrisserHelper.tar.gz LangrisserHelper
 
-rm -rf Langrisser-Helper
+rm -rf LangrisserHelper
+
+echo "打包完毕！"
