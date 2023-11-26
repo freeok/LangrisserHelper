@@ -51,7 +51,7 @@ class SecretRealm:
     def escaped_treasure(self):
         PAGUtils.click_img(img_daily_path + 'escaped_treasure.png')
         PAGUtils.click_img(img_daily_path + 'sweep_gold.png')
-        pyautogui.click(300, 300)
+        PAGUtils.click_img(img_daily_path + 'cancel.png')
         PAGUtils.click_img(img_daily_path + 'back.png')
         PAGUtils.scroll(-1, 10)
 
