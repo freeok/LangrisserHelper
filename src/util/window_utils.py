@@ -34,5 +34,6 @@ class WindowUtils:
             # w.resizeTo(1920, 1200)
             size = pyautogui.size()
             x = int((size.width - 1920) / 2)
-            y = int((size.height - 1200) / 2)
+            # 70 是任务栏的高度
+            y = int((size.height - 1200) / 2 - 70)
             w.moveTo(x, y)
