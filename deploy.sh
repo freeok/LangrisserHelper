@@ -1,6 +1,11 @@
-rm -rf dist build
+#rm -rf dist build
 
-pyinstaller -F --icon=assets/logo.ico app.py
+pyinstaller app.py \
+--name=app \
+--onefile \
+--noconsole \
+--icon=assets/logo.ico \
+--clean
 
 cp -r assets dist
 

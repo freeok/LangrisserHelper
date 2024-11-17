@@ -8,8 +8,9 @@ on:
 
 jobs:
   release-windows:
-    # windows用户执行的是.exe
     runs-on: windows-latest
+    permissions:
+      contents: write
     steps:
       # 拉取项目代码
       - name: Checkout code
